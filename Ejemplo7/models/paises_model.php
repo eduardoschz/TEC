@@ -27,7 +27,9 @@ function insert_pais($pais){
     $insertar .= ') VALUES (';
     $insertar .= '"'. implode('","',$valores) .'"';
     $insertar .= ')';
+    //print_r($insertar);
     return insert_element($insertar);
+
 }
 
 
