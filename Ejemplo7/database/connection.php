@@ -1,7 +1,6 @@
 <?php
   require_once './config/database.php';
-  function get_connection()
-  {
+  function get_connection(){
     extract($GLOBALS['db_connection']);
     $conn = new mysqli($servername, $username, $password,$dbname);
     if ($conn->connect_error) {
