@@ -28,11 +28,40 @@ function get_element($sql){
   return NULL;
 }
 
-function insert_element($sql){
+function insert_element($tabla,$data){
   $conn = get_connection();
+  $campos = [];
+  $valores = [];
+
+    foreach ($data as $key => $value) {
+      $campos[]= $key;
+      $valores[] = $value;
+    }
+
+  $sql = 'INSERT INTO ' . $tabla . ' (';
+    $sql .= implode(', ', $campos);
+    $sql .= ') VALUES (';
+    $sql .= '"'. implode('","',$valores) .'"';
+    $sql .= ')';
   $result = $conn->query($sql);
-  //$row_cnt = $result->num_rows;
+  print_r($sql);
   return $result;
 }
+
+function update_element($tabla,$data, $id){
+  $conn = get_connection();
+  $sql = 'UPDATE . $tabla . SET';
+    $elements = [];
+    foreach ($data as $key => $value) {
+      $elements = $key. ' = "'. $value .'"';
+    }
+      $sql.= implode(',', $elements);
+      $sql.= ' WHERE id =' . $id;
+
+      $result = $conn->query($sql);
+
+    return $result;
+}
+
 
 ?>
