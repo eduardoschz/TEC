@@ -14,23 +14,7 @@ function get_pais_by_id($id){
 }
 
 function insert_pais($pais){
-  $campos = [];
-  $valores = [];
-
-    foreach ($pais as $key => $value) {
-      $campos[]= $key;
-      $valores[] = $value;
-    }
-
-  $insertar = 'INSERT INTO paises(';
-    $insertar .= implode(',', $campos);
-    $insertar .= ') VALUES (';
-    $insertar .= '"'. implode('","',$valores) .'"';
-    $insertar .= ')';
-    //print_r($insertar);
-    return insert_element($insertar);
-
+    return insert_element('paises', $insertar);
 }
-
 
  ?>
