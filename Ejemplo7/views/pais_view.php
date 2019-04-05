@@ -1,4 +1,5 @@
 <h1> <?php echo $pais['pais']; ?> </h1>
+  <a href="./estado_add.php?pais_id=<?php echo $pais_id?>">Agregar Estado</a>
 <ul>
   <?php foreach ($pais['estados'] as $estado) { ?>
     <li>
