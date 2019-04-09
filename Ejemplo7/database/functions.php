@@ -45,19 +45,19 @@ function insert_element($tabla,$data){
     $sql .= ')';
   $result = $conn->query($sql);
   print_r($sql);
-  return $result;
+  return ($result)?$conn->insert_id:FALSE;
 }
 
-function update_element($tabla,$data, $id){
+function update_element($tabla, $data, $id){
   $conn = get_connection();
-  $sql = 'UPDATE . $tabla . SET';
+  $sql = 'UPDATE ' . $tabla . ' SET';
     $elements = [];
     foreach ($data as $key => $value) {
       $elements = $key. ' = "'. $value .'"';
     }
       $sql.= implode(',', $elements);
       $sql.= ' WHERE id =' . $id;
-
+print_r($sql);
       $result = $conn->query($sql);
 
     return $result;

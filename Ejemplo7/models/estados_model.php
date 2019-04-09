@@ -1,5 +1,5 @@
 <?php
-require_once './config/functions.php';
+require_once './database/functions.php';
 
 function get_estados_by_pais_id($pais_id){
   $consulta = "SELECT estado, poblacion FROM estados";

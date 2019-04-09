@@ -1,5 +1,5 @@
 <?php
-require_once './config/functions.php';
+require_once './database/functions.php';
 
 function get_paises(){
   $consulta = "SELECT id, pais FROM paises;";
@@ -14,7 +14,10 @@ function get_pais_by_id($id){
 }
 
 function insert_pais($pais){
-    return insert_element('paises', $insertar);
+    return insert_element('paises', $pais);
 }
 
+function update_pais($pais, $id){
+  return update_element('paises', $pais, $id);
+}
  ?>
