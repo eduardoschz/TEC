@@ -25,8 +25,9 @@ if (!isset($_POST['pais'])) {
         $idioma_pais['created_at'] = date('Y-m-d H:i:s');
         $idioma_pais['updated_at'] = date('Y-m-d H:i:s');
         //print_r("idioma pais: ". $idioma_pais);
+        insert_pais_idioma($idioma_pais);
       }
-      insert_pais_idioma($idioma_pais);
+
     }
     echo '<br /> <h1>Insertado</h1>';
   }else{
