@@ -6,5 +6,7 @@ $pais_ed = get_pais_by_id($id);
 <form method="post">
   <label for="pais">Nombre de pais: </label>
   <input name="pais" placeholder="Escribe aqui el pais" value=<?php echo $pais_ed['pais']; ?>>
+  <label for="indep">Fecha de independencia: </label>
+  <input type="date" name="indep" value="<?php echo $pais_ed['fecha_indep'] ?>">
   <button type="submit">Guardar</button>
 </form>
