@@ -50,14 +50,16 @@ function insert_element($tabla,$data){
 
 function update_element($tabla, $data, $id){
   $conn = get_connection();
-  $sql = 'UPDATE ' . $tabla . ' SET';
+  $sql = 'UPDATE ' . $tabla . ' SET ';
     $elements = [];
     foreach ($data as $key => $value) {
-      $elements = $key. ' = "'. $value .'"';
+
+      $elements[] = $key. ' = "'. $value .'"'; //Faltaban unos corchetes aqui
     }
+    print_r($elements);
       $sql.= implode(',', $elements);
-      $sql.= ' WHERE id =' . $id;
-print_r($sql);
+      $sql.= ' WHERE id = ' . $id;
+      print_r($sql);
       $result = $conn->query($sql);
 
     return $result;
