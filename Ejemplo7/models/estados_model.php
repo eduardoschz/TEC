@@ -3,7 +3,7 @@ require_once './database/functions.php';
 
 function get_estados_by_pais_id($pais_id){
   $consulta = "SELECT estado, poblacion FROM estados";
-  $consulta .= " WHERE pais_id = ".$pais_id.";";
+  $consulta .= " WHERE id_pais = ".$pais_id.";";
   return get_elements($consulta);
 }
 

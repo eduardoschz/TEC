@@ -9,7 +9,7 @@ if (!isset($_POST['estado'])) {
     require_once 'views/estado_form_view.php';
   }
 }else{
-  $estado['pais_id'] = $_GET['pais_id'];
+  $estado['id_pais'] = $_GET['pais_id'];
   $estado['estado'] = $_POST['estado'];
   $estado['poblacion'] = $_POST['poblacion'];
   $estado['status'] = 1;

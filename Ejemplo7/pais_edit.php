@@ -4,7 +4,7 @@ if (!isset($_POST['pais'])) {
 }else{
   require_once 'models/paises_model.php';
   $pais_ed['pais'] = $_POST['pais'];
-  $pais_ed['fecha_indep'] = $_POST['indep'];
+  $pais_ed['fecha_independencia'] = $_POST['indep'];
   $pais_ed['updated_at'] = date('Y-m-d H:i:s');
   $id = $_GET['pais_id'];
   if (update_pais($pais_ed, $id)) {

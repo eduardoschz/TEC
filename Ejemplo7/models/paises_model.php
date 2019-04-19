@@ -7,7 +7,7 @@ function get_paises(){
 }
 
 function get_pais_by_id($id){
-  $consulta1 = "SELECT id, pais, fecha_indep FROM paises";
+  $consulta1 = "SELECT id, pais, fecha_independencia FROM paises";
   $consulta1 .= " WHERE id = ".$id;
   $consulta1 .= " LIMIT 1;" ;
   return get_element($consulta1);

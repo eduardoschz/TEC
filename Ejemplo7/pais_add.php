@@ -6,7 +6,7 @@ if (!isset($_POST['pais'])) {
 }else{
   print_r($_POST);
   $pais['pais'] = $_POST['pais'];
-  $pais['fecha_indep'] = $_POST['indep'];
+  $pais['fecha_independencia'] = $_POST['indep'];
   $pais['status'] = 1;
   $pais['created_at'] = date('Y-m-d H:i:s');
   $pais['updated_at'] = date('Y-m-d H:i:s');
