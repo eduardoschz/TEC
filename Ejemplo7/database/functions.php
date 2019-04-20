@@ -1,5 +1,13 @@
 <?php
 require_once './database/connection.php';
+
+/**
+ * Ejecuta una consulta SQL (SELECT) que regresa
+ * más de un resultado 
+ *
+ * @param [String] $sql Consulta SQL
+ * @return Array Retorna los resultados de la consulta
+ */
 function get_elements($sql){
   $conn = get_connection();
   $result = $conn->query($sql) or die($conn->error);

@@ -14,3 +14,12 @@
   <?php echo $pais['poblacion'] ?>
 
 </ul>
+
+<h3>Idiomas</h3>
+<ul>
+  <?php foreach ($idiomas_pais as $resultado => $idioma) { ?>
+    <li>
+      <?php print_r($idioma['idioma'] . "<br>") ;?>
+    </li>
+  <?php } ?>
+</ul>

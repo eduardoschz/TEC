@@ -20,4 +20,4 @@ function insert_pais($pais){
 function update_pais($pais, $id){
   return update_element('paises', $pais, $id);
 }
- ?>
+?>
