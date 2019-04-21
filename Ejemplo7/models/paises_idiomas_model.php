@@ -17,8 +17,20 @@ function get_idiomas_by_pais_id($pais_id)
   $consulta .= "INNER JOIN idiomas_paises ";
   $consulta .= "ON idiomas.id = idiomas_paises.idioma_id "; 
   $consulta .= "WHERE idiomas_paises.pais_id = " . $pais_id;
+  $consulta .= " AND  idiomas_paises.status = 1";
   // echo $consulta;
   return get_elements($consulta);
 }
 
- ?>
+function get_id_paises_idiomas_by_idioma_id_and_pais_id($id_idioma, $id_pais)
+{
+  $consulta = "SELECT id FROM idiomas_paises WHERE pais_id = " . $id_pais . " AND idioma_id = " . $id_idioma . " AND status = 1";
+  return get_element($consulta);
+}
+
+function updated_pais_idioma($idioma_pais, $id)
+{
+  return update_element('idiomas_paises', $idioma_pais, $id);
+}
+
+?>

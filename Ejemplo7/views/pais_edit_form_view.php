@@ -7,15 +7,8 @@ $id = $_GET['pais_id'];
 $pais_ed = get_pais_by_id($id);
 $idiomas_pais_ed = get_idiomas_by_pais_id($id);
 $idiomas = get_idiomas();
-
-print_r($pais_ed);
-echo "<br>";
-print_r($idiomas_pais_ed);
-echo "<br>";
-print_r($idiomas);
-
 ?>
-<br>
+
 <h1>Editando a <?php echo $pais_ed['pais']; ?></h1>
 <form method="post">
   <label for="pais">Nombre de pais: </label>

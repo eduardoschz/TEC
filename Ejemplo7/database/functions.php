@@ -35,25 +35,30 @@ function get_element($sql){
   $conn->close();
   return NULL;
 }
-
+/**
+ * INSERT INTO tabla (campos) VALUES(valores)
+ *
+ * @param [String] $tabla Nombre de la tabla
+ * @param [Array] $data Datos que se insertaran
+ * @return int/False Retorna el ID de la insercion o un FALSE si no se pudo insertar 
+ */
 function insert_element($tabla,$data){
   $conn = get_connection();
   $campos = [];
   $valores = [];
 
-    foreach ($data as $key => $value) {
-      $campos[]= $key;
-      $valores[] = $value;
-    }
+  foreach ($data as $key => $value) {
+    $campos[]= $key;
+    $valores[] = $value;
+  }
 
   $sql = 'INSERT INTO ' . $tabla . ' (';
-    $sql .= implode(', ', $campos);
-    $sql .= ') VALUES (';
-    $sql .= '"'. implode('","',$valores) .'"';
-    $sql .= ')';
+  $sql .= implode(', ', $campos);
+  $sql .= ') VALUES (';
+  $sql .= '"'. implode('","',$valores) .'"';
+  $sql .= ')';
   $result = $conn->query($sql);
-  print_r($sql);
-  return ($result)?$conn->insert_id:FALSE;
+  return ($result)?$conn->insert_id:FALSE; 
 }
 
 function update_element($tabla, $data, $id){
@@ -61,14 +66,11 @@ function update_element($tabla, $data, $id){
   $sql = 'UPDATE ' . $tabla . ' SET ';
     $elements = [];
     foreach ($data as $key => $value) {
-
       $elements[] = $key. ' = "'. $value .'"'; //Faltaban unos corchetes aqui
     }
-    print_r($elements);
-      $sql.= implode(',', $elements);
-      $sql.= ' WHERE id = ' . $id;
-      print_r($sql);
-      $result = $conn->query($sql);
+    $sql.= implode(',', $elements);
+    $sql.= ' WHERE id = ' . $id;
+    $result = $conn->query($sql);
 
     return $result;
 }
