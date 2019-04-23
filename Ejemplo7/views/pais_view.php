@@ -10,7 +10,15 @@
     </li>
   <?php } ?>
   <br />
+</ul>
   Poblacion total:
   <?php echo $pais['poblacion'] ?>
 
+  <h2>Idiomas</h2>
+  <ul>
+  <?php foreach ($pais['idiomas'] as $idioma) {?>
+    <li>
+      <?php  echo $idioma['idioma'];  ?>
+    </li>
+  <?php  } ?>
 </ul>
