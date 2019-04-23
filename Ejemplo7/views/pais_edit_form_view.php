@@ -18,8 +18,8 @@ $pais_ed = get_pais_by_id($id);
       <?php if($idioma['marcado'] == TRUE){ ?>
         <?php echo 'checked';   ?>
       <?php } ?>
-    <?php  } ?>
-    <?php echo$idioma['idioma']."<br />" ?>
+    <?php  } ?>>
+    <?php echo $idioma['idioma']."<br />" ?>
   <?php  } ?>
 
   <button type="submit">Guardar</button>
