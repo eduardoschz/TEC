@@ -56,7 +56,7 @@ function update_element($tabla, $data, $id){
 
       $elements[] = $key. ' = "'. $value .'"'; //Faltaban unos corchetes aqui
     }
-    print_r($elements);
+  //  print_r($elements);
       $sql.= implode(',', $elements);
       $sql.= ' WHERE id = ' . $id;
       print_r($sql);
